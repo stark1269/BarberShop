@@ -1,0 +1,20 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  color: $title-color;
+  border: 1px solid $current-color;
+  border-radius: 25px;
+  transition: transform 250ms $transition;
+
+  &:hover, &:focus {
+    transform: scale(1.02);
+  }
+}

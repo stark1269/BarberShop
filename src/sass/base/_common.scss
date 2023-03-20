@@ -1,12 +1,7 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
-// body {
-//   font-family: 'Roboto', sans-serif;
-//   background-color: $main-color;
-//   font-size: 14px;
-//   color: $text-color;
-// }
-
-// body.modal-open {
-//   overflow: hidden;
-// }
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  background-color: $main-color;
+}
