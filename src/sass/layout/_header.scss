@@ -1,11 +1,15 @@
-header {
+.header-mob {
   position: absolute;
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
+
+  @include tablet {
+    display: none;
+  }
 }
 
-.header-wrap {
+.header-mob-wrap {
 display: flex;
 justify-content: space-between;
 }
