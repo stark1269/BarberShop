@@ -24,3 +24,5 @@ blogCard.addEventListener('click', () => {
   blogTextFirst.classList.toggle('slide-first');
   blogTextSecond.classList.toggle('slide-second');
 });
+
+// 

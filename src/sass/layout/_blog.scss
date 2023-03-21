@@ -75,15 +75,24 @@
 
 .blog-text-wrap {
   margin: 0 auto;
+  margin-bottom: 20px;
   position: relative;
-  min-height: 180px;
+  height: 250px;
   width: 100%;
   overflow: hidden;
   display: flex;
 
-  @media screen and (max-width: 320px) {
-    height: 230px;
-  }
+@media screen and (min-width: 375px) {
+  height: 210px
+}
+
+@media screen and (min-width: 425px) {
+  height: 180px
+}
+
+@media screen and (min-width: 500px) {
+  height: 140px
+}
 }
 
 .blog-text-first, .blog-text-second {
@@ -95,10 +104,10 @@ position: absolute;
   align-items: center;
   width: 100%;
   height: 100%;
-  transition: transform 1s $transition;
+  transition: transform 1s $transition, opacity 1s $transition;
 
   font-size: 14px;
-  line-height: 1.86;
+  line-height: 1.68;
   letter-spacing: 0.02em;
   
   color: $text-color;
@@ -106,16 +115,20 @@ position: absolute;
 
 .blog-text-first {
   transform: translateX(0);
+  opacity: 1;
 }
 
 .slide-first {
   transform: translateX(-500px);
+  opacity: 0;
 }
 
 .blog-text-second {
   transform: translateX(500px);
+  opacity: 0;
 }
 
 .slide-second {
   transform: translateX(0);
+  opacity: 1;
 }

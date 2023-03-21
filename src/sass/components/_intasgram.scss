@@ -1,0 +1,25 @@
+.instagram {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: 0.2em;
+
+  color: $title-color;
+
+  &::before {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background-color: $title-color;
+  }
+
+  &:hover::before {
+    background-color: $current-color;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
