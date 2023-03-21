@@ -1,8 +1,11 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 
 body {
-  overflow: hidden;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   background-color: $main-color;
+}
+
+.body-open {
+  overflow: hidden;
 }

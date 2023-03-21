@@ -6,6 +6,7 @@ const mobMenu = document.querySelector('.mob-menu');
 mobMenuBtn.addEventListener('click', () => {
   mobMenuBtn.classList.toggle('open');
   mobMenu.classList.toggle('mob-menu-open');
+  document.body.classList.toggle('body-open');
 });
 
 // Клик по фото в секции "блог"
