@@ -77,32 +77,37 @@
 
 .blog-title {
   margin-bottom: 20px;
-  font-size: 28px;
+  max-width: 300px;
+  font-size: 24px;
   line-height: 1.17;
   letter-spacing: 0.05em;
   
   color: $title-color;
+
+  @include mobile {
+    font-size: 28px;
+  }
 }
 
 .blog-text-wrap {
   margin: 0 auto;
   margin-bottom: 20px;
   position: relative;
-  height: 250px;
+  height: 230px;
   width: 100%;
   overflow: hidden;
   display: flex;
 
 @media screen and (min-width: 375px) {
-  height: 210px
+  height: 180px;
 }
 
 @media screen and (min-width: 425px) {
-  height: 180px
+  height: 160px;
 }
 
-@media screen and (min-width: 500px) {
-  height: 140px
+@media screen and (min-width: 580px) {
+  height: 120px;
 }
 }
 
