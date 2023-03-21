@@ -63,3 +63,30 @@
       font-size: 14px;
     }
 }
+
+.border-arrow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 9px;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  border: 2px solid $current-color;
+  border-radius: 50%;
+  transition: transform 500ms $transition;
+
+  &:hover, &:focus {
+    transform: rotate(180deg);
+  }
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+
+  border-color: $current-color;
+}

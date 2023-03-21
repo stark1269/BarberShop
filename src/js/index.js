@@ -26,4 +26,20 @@ blogCard.addEventListener('click', () => {
   blogTextSecond.classList.toggle('slide-second');
 });
 
-// 
+// Кнопка вверх
+
+const arrow = document.querySelector('.border-arrow');
+arrow.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+const observer = new IntersectionObserver((entries) => {
+const { isIntersecting } = entries[0];
+  if (!isIntersecting) {
+    arrow.style.display = 'flex';
+  } else arrow.style.display = 'none';
+});
+
+const header = document.querySelector('.header');
+observer.observe(header);
+
