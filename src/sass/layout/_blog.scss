@@ -11,11 +11,12 @@
 }
 
 .blog-card {
+  position: relative;
   margin: 0 auto;
   margin-bottom: 20px;
   width: 260px;
   height: 230px;
-  position: relative;
+  cursor: pointer;
 
 @include mobile {
   width: 420px;
