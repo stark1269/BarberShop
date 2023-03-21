@@ -25,13 +25,13 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
 
-    color: $pre-title-color;
+    color: $hero-pre-title-color;
 
   &::before {
     content: '';
     width: 50px;
     height: 1px;
-    background-color: $pre-title-color;
+    background-color: $hero-pre-title-color;
     }
 
     @include mobile {
@@ -60,7 +60,7 @@
     line-height: 1.62;
     letter-spacing: 0.02em;
 
-    color: $text-color;
+    color: $hero-text-color;
 
     @include mobile {
       width: 320px;
