@@ -56,39 +56,6 @@
 
 // ---
 
-.blog-pre-title {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 20px;
-  font-size: 11px;
-  line-height: 1.36;
-  text-transform: uppercase;
-
-  color: $title-color;
-
-  &::before {
-      content: '';
-      width: 50px;
-      height: 1px;
-      background-color: $title-color;
-  }
-}
-
-.blog-title {
-  margin-bottom: 20px;
-  max-width: 300px;
-  font-size: 24px;
-  line-height: 1.17;
-  letter-spacing: 0.05em;
-  
-  color: $title-color;
-
-  @include mobile {
-    font-size: 28px;
-  }
-}
-
 .blog-text-wrap {
   margin: 0 auto;
   margin-bottom: 20px;

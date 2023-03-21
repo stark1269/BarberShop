@@ -1,0 +1,29 @@
+.title-dark {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 20px;
+  max-width: 300px;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+
+  color: $title-color;
+
+  @include mobile {
+    font-size: 28px;
+  }
+}
+
+.title-ligth {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 20px;
+  max-width: 300px;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+
+  color: $main-color;
+
+  @include mobile {
+    font-size: 28px;
+  }
+}

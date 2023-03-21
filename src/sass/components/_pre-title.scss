@@ -1,0 +1,37 @@
+.pre-title-dark {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+
+  color: $title-color;
+
+  &::before {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background-color: $title-color;
+  }
+}
+
+.pre-title-ligth {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+  
+  color: $hero-text-color;
+  
+  &::before {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background-color: $hero-text-color;
+  }
+}

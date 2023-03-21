@@ -1,18 +1,14 @@
 .hero {
   margin: 0 auto;
   padding-top: 200px;
-  height: 480px;
-  max-width: 1500px;
+  padding-bottom: 200px;
+  max-width: 1600px;
 
   background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)), 
     url(./../images/hero/hero-mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  @include mobile {
-    height: 580px;
-  }
 }
 
 .hero-pre-title {
@@ -42,7 +38,7 @@
 
 .hero-title {
   margin-bottom: 20px;
-  font-family: 'Raleway';
+  font-family: 'Raleway', sans-serif;
   font-size: 30px;
   line-height: 1.16;
   letter-spacing: 0.05em;
