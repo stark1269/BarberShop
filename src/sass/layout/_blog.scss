@@ -17,6 +17,11 @@
   width: 260px;
   height: 230px;
   cursor: pointer;
+  transition: transform 250ms $transition;
+
+  &:hover, &:focus {
+    transform: scale(1.01);
+  }
 
 @include mobile {
   width: 420px;
