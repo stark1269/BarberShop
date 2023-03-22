@@ -1,89 +1,17 @@
 .footer {
-  background-color: $background-color;
-}
+  padding-top: 84px;
+  padding-bottom: 84px;
+  margin: 0 auto;
+  max-width: 1600px;
 
-.footer-btn {
-  color: $main-color;
+  background-color: $background-color;
+  background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
+    url(./../images/footer/footer-mob.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .footer-pre-title {
   color: $main-color;
-}
-
-.footer-form {
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
-  align-items: center;
-  margin-bottom: 84px;
-}
-
-.form-input {
-  padding: 8px;
-  width: 100%;
-  font-size: 11px;
-  line-height: 1.36;
-  letter-spacing: 0.1em;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid $footer-form-color;
-  color: $main-color;
-  transition: border-color 250ms $transition;
-
-  &::placeholder {
-    font-size: 11px;
-    line-height: 1.36;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 250ms $transition;
-
-    color: $footer-form-color;
-  }
-
-  &:hover, &:focus {
-    border-color: $main-color;
-  
-  &::placeholder {
-    color: $main-color;
-    }
-  }
-}
-
-.form-textarea {
-  padding: 8px;
-  width: 100%;
-  font-size: 11px;
-  line-height: 1.36;
-  letter-spacing: 0.1em;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid $footer-form-color;
-  resize: none;
-  color: $main-color;
-  transition: border-color 250ms $transition;
-
-  &::placeholder {
-    font-size: 11px;
-    line-height: 1.36;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: color 250ms $transition;
-
-    color: $footer-form-color;
-  }
-
-  &:hover, &:focus {
-    border-color: $main-color;
-    
-    &::placeholder {
-      color: $main-color;
-    }
-  }
-}
-
-// ---
-
-.nav-wrap {
-  padding-top: 84px;
-  padding-bottom: 84px;
 }
