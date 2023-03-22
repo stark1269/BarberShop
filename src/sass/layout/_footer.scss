@@ -2,11 +2,20 @@
   background-color: $background-color;
 }
 
+.footer-btn {
+  color: $main-color;
+}
+
+.footer-pre-title {
+  color: $main-color;
+}
+
 .footer-form {
   display: flex;
   flex-direction: column;
   gap: 44px;
   align-items: center;
+  margin-bottom: 84px;
 }
 
 .form-input {
@@ -72,10 +81,9 @@
   }
 }
 
-.footer-btn {
-  color: $main-color;
-}
+// ---
 
-.footer-pre-title {
-  color: $main-color;
+.nav-wrap {
+  padding-top: 84px;
+  padding-bottom: 84px;
 }
