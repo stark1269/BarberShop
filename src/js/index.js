@@ -42,3 +42,29 @@ const { isIntersecting } = entries[0];
 
 const header = document.querySelector('.header');
 observer.observe(header);
+
+// Секция галерея
+
+const galleryItems = document.querySelectorAll('.gallery-item');
+galleryItems.forEach(item => {
+  const instans = new IntersectionObserver((entries) => {
+    const { isIntersecting, target } = entries[0];
+    if (isIntersecting) {
+      target.classList.add('animated-gallery');
+    }
+  });
+  instans.observe(item);
+}
+);
+
+const gallery = document.querySelector('.gallery');
+galleryItems.forEach(item => {
+  const instansGallery = new IntersectionObserver((entries) => {
+    const { isIntersecting } = entries[0];
+    if (!isIntersecting) {
+      item.classList.remove('animated-gallery');
+    }
+  });
+  instansGallery.observe(gallery);
+}
+);

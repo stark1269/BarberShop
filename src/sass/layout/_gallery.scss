@@ -9,6 +9,12 @@
 }
 
 .gallery-item {
-border-radius: 5px;
-overflow: hidden;
+transform: translateY(100px);
+opacity: 0;
+transition: transform 1s $transition, opacity 1s $transition;
+}
+
+.animated-gallery {
+  transform: translateY(0);
+  opacity: 1;
 }
