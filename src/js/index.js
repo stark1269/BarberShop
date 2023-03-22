@@ -42,4 +42,3 @@ const { isIntersecting } = entries[0];
 
 const header = document.querySelector('.header');
 observer.observe(header);
-

@@ -47,7 +47,7 @@
 }
 
 .click-front {
-  transform: rotateY(360deg);
+  transform: perspective(300px) rotateY(360deg);
   opacity: 0;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .click-back {
-  transform: rotateY(360deg);
+  transform: perspective(300px) rotateY(360deg);
   opacity: 1;
 }
 

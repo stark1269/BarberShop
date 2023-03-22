@@ -1,0 +1,14 @@
+.gallery {
+  background-color: $gallery-color;
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.gallery-item {
+border-radius: 5px;
+overflow: hidden;
+}
