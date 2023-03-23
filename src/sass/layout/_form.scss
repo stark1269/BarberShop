@@ -7,6 +7,22 @@
   flex-direction: column;
   gap: 44px;
   align-items: center;
+
+  @include tablet {
+    align-items: start;
+  }
+}
+
+.form-input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  align-items: center;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: row;
+  }
 }
 
 .form-input {

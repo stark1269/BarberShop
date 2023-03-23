@@ -8,6 +8,16 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @include tablet {
+    background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
+      url(./../images/contacts/contacts-tab.jpg);
+  }
+
+  @include desktop {
+    background-image: linear-gradient(rgba(25, 28, 38, 0.2), rgba(25, 28, 38, 0.2)),
+      url(./../images/contacts/contacts-desk.jpg);
+  }
 }
 
 .contacts-title {
