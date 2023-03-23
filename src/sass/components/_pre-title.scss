@@ -15,6 +15,10 @@
     height: 1px;
     background-color: $title-color;
   }
+
+  @include desktop {
+    font-size: 13px;
+  }
 }
 
 .pre-title-light {
@@ -33,5 +37,9 @@
     width: 50px;
     height: 1px;
     background-color: $hero-text-color;
+  }
+
+  @include desktop {
+    font-size: 13px;
   }
 }

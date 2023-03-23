@@ -10,6 +10,13 @@
   }
 }
 
+.blog-card-wrap {
+  @include tablet {
+    gap: 40px;
+    display: flex;
+  }
+}
+
 .blog-card {
   position: relative;
   margin: 0 auto;
@@ -26,6 +33,11 @@
 @include mobile {
   width: 420px;
   height: 360px;
+}
+
+@include tablet {
+  margin: 0;
+  height: 420px;
 }
 }
 
@@ -62,6 +74,16 @@
 
 // ---
 
+.blog-title {
+  margin-bottom: 0;
+}
+
+.blog-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .blog-text-wrap {
   margin: 0 auto;
   margin-bottom: 20px;
@@ -82,6 +104,11 @@
 @media screen and (min-width: 580px) {
   height: 120px;
 }
+
+@include tablet {
+  margin: 0;
+  height: 230px;
+}
 }
 
 .blog-text-first, .blog-text-second {
@@ -99,6 +126,10 @@ position: absolute;
   letter-spacing: 0.02em;
   
   color: $text-color;
+
+  @include desktop {
+    font-size: 16px;
+  }
 }
 
 .blog-text-first {
