@@ -1,20 +1,85 @@
-.header-mob {
+.header {
   position: absolute;
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
+  z-index: 1;
+}
 
-  @include tablet {
+.header-wrap {
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+  @media screen and (max-width: 767px) {
     display: none;
+  }
+}
+
+.header-list {
+  display: flex;
+  gap: 20px;
+
+  @include desktop {
+    gap: 30px;
+  }
+}
+
+.header-link {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  transition: color 250ms $transition;
+
+  color: $main-color;
+
+  &:hover, &:focus {
+    color: $current-color;
+  }
+
+  @include desktop {
+    font-size: 14px;
+  }
+}
+
+.header-tel {
+font-size: 12px;
+line-height: 1.33;
+letter-spacing: 0.1em;
+
+color: $main-color;
+
+@include desktop {
+    font-size: 14px;
+  }
+}
+
+.header-btn {
+  color: $main-color;
+}
+
+.header-tel-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @include desktop {
+    flex-direction: row-reverse;
+    gap: 40px;
   }
 }
 
 .header-mob-wrap {
 display: flex;
 justify-content: space-between;
+
+@include tablet {
+  display: none;
+}
 }
 
-.logo-mob {
+.logo {
   fill: $main-color;
 }
 
@@ -110,7 +175,7 @@ justify-content: space-between;
   opacity: 1;
 }
 
-.logo {
+.logo-mob {
   fill: $title-color;
 }
 
