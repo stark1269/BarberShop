@@ -11,9 +11,13 @@
 }
 
 .footer-text {
-  font-size: 11px;
+  font-size: 9px;
   line-height: 1.36;
   letter-spacing: 0.2em;
 
   color: $hero-text-color;
+
+  @include mobile {
+    font-size: 11px;
+  }
 }
