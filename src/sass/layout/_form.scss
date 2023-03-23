@@ -1,5 +1,15 @@
+.contacts-form-wrap {
+  @include desktop {
+    display: flex;
+  }
+}
+
 .form {
   background-color: $background-color;
+  
+  @include desktop {
+    width: 100%;
+  }
 }
 
 .form-items {
