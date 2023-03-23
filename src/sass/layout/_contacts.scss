@@ -24,6 +24,17 @@
   text-align: center;
   margin: 0 auto;
   margin-bottom: 40px;
+
+  @include tablet {
+    text-align: start;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.contacts-nav-list-wrap {
+  display: flex;
+  justify-content: space-between;
 }
 
 .contacts-nav-list {
