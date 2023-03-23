@@ -1,3 +1,6 @@
+import simpleLightbox from "simplelightbox";
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 // открытие/закрытие мобильного меню
 
 const mobMenuBtn = document.querySelector('.nav-icon');
@@ -45,7 +48,7 @@ observer.observe(header);
 
 // Секция галерея
 
-const galleryItems = document.querySelectorAll('.gallery-item');
+const galleryItems = document.querySelectorAll('.gallery-item-link');
 galleryItems.forEach(item => {
   const instans = new IntersectionObserver((entries) => {
     const { isIntersecting, target } = entries[0];
@@ -68,6 +71,8 @@ galleryItems.forEach(item => {
   instansGallery.observe(gallery);
 }
 );
+
+new simpleLightbox('.gallery a');
 
 // Секция формы
 
