@@ -68,3 +68,19 @@ galleryItems.forEach(item => {
   instansGallery.observe(gallery);
 }
 );
+
+// Секция формы
+
+const form = document.querySelector('.form-items');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const { name, phone, text } = e.target.elements
+  const data = {
+    name: name.value.trim(),
+    phone: phone.value.trim(),
+    message: text.value.trim(),
+  };
+  console.log(data);
+  form.reset()
+});
