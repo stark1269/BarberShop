@@ -58,13 +58,8 @@
   gap: 10px;
   line-height: 1.67;
   letter-spacing: 0.02em;
-  transition: color 250ms $transition;
 
   color: $hero-text-color;
-
-  &:hover, &:focus {
-    color: $current-color;
-  }
 
   @include mobile {
     font-size: 18px;
@@ -73,6 +68,15 @@
 
 .contacts-nav-logo {
   fill: currentColor;
+  transition: fill 250ms $transition;
+  
+  .contacts-nav-link:hover & {
+    fill: $current-color;
+  }
+
+  .contacts-nav-link:focus & {
+    fill: $current-color;
+  }
 }
 
 .contacts-hours-text {
