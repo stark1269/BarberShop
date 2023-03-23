@@ -25,6 +25,11 @@
   width: 100%;
   background: linear-gradient(180deg, #090B13 0%, rgba(9, 11, 19, 0.2) 100%);
   border-radius: 7px;
+
+  @include tablet {
+    gap: 30px;
+    padding: 40px 50px;
+  }
 }
 
 .price-item {
@@ -38,6 +43,10 @@
     flex-grow: 1;
     height: 1px;
     background-color: rgba(157, 164, 189, 0.12);
+  }
+
+  @include tablet {
+    gap: 10px;
   }
 }
 
@@ -54,5 +63,13 @@
 
   @include mobile {
     font-size: 12px;
+  }
+
+  @include tablet {
+    font-size: 16px;
+  }
+
+  @include desktop {
+    font-size: 18px;
   }
 }
