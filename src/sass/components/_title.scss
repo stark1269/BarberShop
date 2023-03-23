@@ -12,6 +12,10 @@
     font-size: 28px;
   }
 
+  @include tablet {
+    max-width: 380px;
+  }
+
   @include desktop {
     max-width: 500px;
     font-size: 40px;
