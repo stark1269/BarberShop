@@ -46,19 +46,73 @@
       opacity: 0;
     }
   }
+
+  @include tablet {
+    &:nth-child(even) {
+      transition-delay: 200ms;
+    }
+  }
+
+  @include desktop {
+    &:nth-child(1) {
+      transition: transform 1s $transition, opacity 1s $transition;
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    &:nth-child(2) {
+      transition: transform 1s $transition, opacity 1s $transition;
+      transition-delay: 200ms;
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    &:nth-child(3) {
+      transition: transform 1s $transition, opacity 1s $transition;
+      transition-delay: 400ms;
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    &:nth-child(4) {
+      transition: transform 1s $transition, opacity 1s $transition;
+      transition-delay: 600ms;
+      transform: translateY(200px);
+      opacity: 0;
+    }
+  }
 }
 
 .animated-gallery {
 
   @media screen and (max-width: 1199px) {
   &:nth-child(even) {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  
-    &:nth-child(odd) {
-      transform: translateX(0);
-      opacity: 1;
-    }
+    transform: translateX(0);
+    opacity: 1;
   }
+  
+  &:nth-child(odd) {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+  @include desktop {
+  &:nth-child(1) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  &:nth-child(2) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  &:nth-child(3) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  &:nth-child(4) {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 }

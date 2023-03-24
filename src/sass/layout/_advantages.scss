@@ -10,6 +10,7 @@
   @include desktop {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: center;
     gap: 130px;
   }
 }
