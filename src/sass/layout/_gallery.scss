@@ -49,32 +49,29 @@
 
   @include tablet {
     &:nth-child(even) {
-      transition-delay: 200ms;
+      transition-delay: 250ms;
     }
   }
 
   @include desktop {
     &:nth-child(1) {
       transition: transform 1s $transition, opacity 1s $transition;
-      transform: translateY(200px);
+      transform: translateY(100px);
       opacity: 0;
     }
     &:nth-child(2) {
       transition: transform 1s $transition, opacity 1s $transition;
-      transition-delay: 200ms;
-      transform: translateY(200px);
+      transform: translateY(150px);
       opacity: 0;
     }
     &:nth-child(3) {
       transition: transform 1s $transition, opacity 1s $transition;
-      transition-delay: 400ms;
       transform: translateY(200px);
       opacity: 0;
     }
     &:nth-child(4) {
       transition: transform 1s $transition, opacity 1s $transition;
-      transition-delay: 600ms;
-      transform: translateY(200px);
+      transform: translateY(250px);
       opacity: 0;
     }
   }
