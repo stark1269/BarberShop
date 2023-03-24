@@ -89,3 +89,38 @@ form.addEventListener('submit', (e) => {
   console.log(data);
   form.reset()
 });
+
+// Плавный скролл
+
+function closeMobileMenu() {
+  mobMenuBtn.classList.remove('open');
+  mobMenu.classList.remove('mob-menu-open');
+  document.body.classList.remove('body-open');
+};
+
+function scrollTo(e) {
+const link = e.target
+  if (link.dataset.goto) {
+  const gotoBlock = document.querySelector(link.dataset.goto);
+  const gotoBlockValue = gotoBlock.getBoundingClientRect().top;
+
+  window.scrollTo({
+    top: gotoBlockValue,
+    behavior: 'smooth',
+  });
+    e.preventDefault();
+    closeMobileMenu();
+  };
+};
+
+const menuLinks = document.querySelectorAll('.header-link');
+menuLinks.forEach(menuLink => {
+  menuLink.addEventListener('click', scrollTo)
+}
+);
+
+const mobMenuLinks = document.querySelectorAll('.mob-menu-list');
+mobMenuLinks.forEach(menuLink => {
+  menuLink.addEventListener('click', scrollTo)
+}
+);
