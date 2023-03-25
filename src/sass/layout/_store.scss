@@ -18,6 +18,8 @@
 }
 
 .store-item {
+box-shadow: -10px -10px 20px rgb(60, 60, 60);
+
   @include tablet {
     width: calc((100% - 30px) / 2); 
   }
@@ -31,7 +33,6 @@
   border-radius: 20px 20px 0 0;
   overflow: hidden;
   border: 1px solid $background-color;
-  box-shadow: -10px -10px 20px rgb(60, 60, 60);
 }
 
 .store-item-decs {
