@@ -6,7 +6,6 @@
 .gallery-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 30px;
 
   @include tablet {
@@ -16,20 +15,13 @@
 }
 
 .gallery-item-link {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-  1px 4px 6px rgba(0, 0, 0, 0.16);
-
-  @media screen and (max-width: 767px) {
-    margin: 0 auto;
-  }
+  box-shadow: -10px -10px 20px rgb(60, 60, 60);
 
   @include tablet {
-    max-width: 330px;
     width: calc((100% - 30px) / 2);
   }
 
   @include desktop {
-    max-width: 270px;
     width: calc((100% - 90px) / 4);
   }
 
