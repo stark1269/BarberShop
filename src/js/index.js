@@ -135,10 +135,11 @@ const storeList = document.querySelector('.store-list');
 storeList.addEventListener('click', onCardButtonClick);
 
 function onCardButtonClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return
-  }
+  const btn = e.target.closest('button');
+  const { cart } = btn?.dataset || {};
 
+  switch (cart) {
+  case 'cart':
   const parent = e.target.closest('li');
   const { id } = parent.dataset;
 
@@ -151,5 +152,7 @@ function onCardButtonClick(e) {
     shopCart.push(newItem);
   };
   console.log(shopCart)
-  Notiflix.Notify.success('Вау, твій товар уже в кошику!');
+      Notiflix.Notify.success('Вау, твій товар уже в кошику!');
+  break
+  };
 };
