@@ -107,16 +107,12 @@
 }
 
 @media screen and (min-width: 580px) {
-  height: 120px;
+  height: 160px;
 }
 
 @include tablet {
   margin: 0;
-  height: 180px;
-}
-
-@media screen and (min-width: 1024px) {
-  height: 160px;
+  height: 200px;
 }
 }
 

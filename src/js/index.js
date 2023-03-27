@@ -161,21 +161,40 @@ function onCardButtonClick(e) {
 
 // Функиця показа кнопки корзины и корзины товара
 
-const heroCartBtn = document.querySelector('.hero-cart-btn');
-const modalShopCart = document.querySelector('.shop-cart');
-
-function showModalShopCart() {
-  modalShopCart.classList.remove('cart-none');
-};
-
-// function closeModalShopCart() {
-//   modalShopCart.classList.add('cart-none');
-// }
-
 function showBtnCart() {
   if (shopCart.length) {
-    heroCartBtn.style.display = 'flex';
+    openCartBtn.style.display = 'flex';
   };
 };
 
-heroCartBtn.addEventListener('click', showModalShopCart);
+const openCartBtn = document.querySelector('.open-cart-shop-btn');
+const modalShopCart = document.querySelector('.shop-cart');
+const modalShopCartBtn = document.querySelector('.cart-shop-btn');
+const cartShopList = document.querySelector('.cart-shop-list');
+
+function showModalShopCart() {
+  modalShopCart.classList.remove('cart-none');
+
+  cartShopList.innerHTML = createMarkup(shopCart);
+};
+
+openCartBtn.addEventListener('click', showModalShopCart);
+
+function closeModalShopCart() {
+  modalShopCart.classList.add('cart-none');
+}
+
+modalShopCartBtn.addEventListener('click', closeModalShopCart);
+
+// Функия создания разметки списка корзины товаров
+
+function createMarkup(array) {
+  return array.map(item => `<li class="cart-shop-item" data-id="${item.id}">
+  <div class="item-text-wrap">
+  <p class="cart-item-text">${item.name}</p>
+  <p class="cart-item-text">${item.price} &#8372;</p>
+  <p class="cart-item-text">Кількість: ${item.quantity}</p>
+  </div>
+  <button class="cart-item-btn" type="button"></button>
+  </li>`).join('');
+};
