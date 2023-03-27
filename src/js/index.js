@@ -130,7 +130,6 @@ mobMenuLinks.forEach(menuLink => {
 // Функция клика по кнопке в добавить в коризну
 
 let shopCart = [];
-let totalSum = 0;
 
 const storeList = document.querySelector('.store-list');
 storeList.addEventListener('click', onCardButtonClick);
