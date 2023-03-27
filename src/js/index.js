@@ -130,6 +130,7 @@ mobMenuLinks.forEach(menuLink => {
 // Функция клика по кнопке в добавить в коризну
 
 let shopCart = [];
+let totalSum = 0;
 
 const storeList = document.querySelector('.store-list');
 storeList.addEventListener('click', onCardButtonClick);
@@ -176,6 +177,14 @@ function showModalShopCart() {
   modalShopCart.classList.remove('cart-none');
 
   cartShopList.innerHTML = createMarkup(shopCart);
+
+  sum = shopCart.map(item => item.price * item.quantity);
+  let totalSum = sum.reduce((acc, item) => {
+    return acc += item
+  }, 0);
+
+  const totalPriceContent = document.querySelector('.cart-shop-total-price');
+  totalPriceContent.textContent = `${totalSum} ₴`; 
 };
 
 openCartBtn.addEventListener('click', showModalShopCart);
@@ -192,9 +201,11 @@ function createMarkup(array) {
   return array.map(item => `<li class="cart-shop-item" data-id="${item.id}">
   <div class="item-text-wrap">
   <p class="cart-item-text">${item.name}</p>
-  <p class="cart-item-text">${item.price} &#8372;</p>
+  <p class="store-item-price">${item.price} &#8372;</p>
   <p class="cart-item-text">Кількість: ${item.quantity}</p>
   </div>
-  <button class="cart-item-btn" type="button"></button>
+  <button class="cart-item-btn" type="button">Видалити</button>
   </li>`).join('');
 };
+
+// 
