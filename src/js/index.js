@@ -159,12 +159,23 @@ function onCardButtonClick(e) {
   };
 };
 
-// Функиця показа кнопки корзины товара
+// Функиця показа кнопки корзины и корзины товара
 
 const heroCartBtn = document.querySelector('.hero-cart-btn');
+const modalShopCart = document.querySelector('.shop-cart');
+
+function showModalShopCart() {
+  modalShopCart.classList.remove('cart-none');
+};
+
+// function closeModalShopCart() {
+//   modalShopCart.classList.add('cart-none');
+// }
 
 function showBtnCart() {
   if (shopCart.length) {
     heroCartBtn.style.display = 'flex';
   };
 };
+
+heroCartBtn.addEventListener('click', showModalShopCart);
