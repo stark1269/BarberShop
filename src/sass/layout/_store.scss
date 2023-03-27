@@ -66,6 +66,9 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px;
   height: 50px;
   border: 1px solid $current-color;
@@ -73,5 +76,8 @@
 
   color: $current-color;
   background-color: $main-color;
-  
+}
+
+.store-icon-cart {
+  fill: $current-color;
 }
