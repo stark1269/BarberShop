@@ -155,7 +155,7 @@ function onCardButtonClick(e) {
   };
 
   Notiflix.Notify.success('Вау, твій товар уже в кошику!');
-  break
+    break
   };
 };
 
