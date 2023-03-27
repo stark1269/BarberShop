@@ -102,17 +102,13 @@
   height: 180px;
 }
 
-@media screen and (min-width: 425px) {
-  height: 160px;
-}
-
-@media screen and (min-width: 580px) {
-  height: 160px;
-}
-
 @include tablet {
   margin: 0;
-  height: 200px;
+  height: 210px;
+}
+
+@include desktop {
+  height: 160px;
 }
 }
 
