@@ -41,4 +41,4 @@ export const storeCard = [
     price: 400,
     quantity: 1,
   },
-]
+];
