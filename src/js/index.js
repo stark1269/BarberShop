@@ -1,5 +1,6 @@
+import { storeCard } from "./storeCard";
 import simpleLightbox from "simplelightbox";
-import SimpleLightbox from "simplelightbox";
+import Notiflix from "notiflix";
 import "simplelightbox/dist/simple-lightbox.min.css";
 // открытие/закрытие мобильного меню
 
@@ -124,3 +125,30 @@ mobMenuLinks.forEach(menuLink => {
   menuLink.addEventListener('click', scrollTo)
 }
 );
+
+// Клик по кнопке в секции товаров
+
+let shopCart = [];
+
+const storeList = document.querySelector('.store-list');
+storeList.addEventListener('click', onCardButtonClick);
+
+function onCardButtonClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return
+  }
+
+  const parent = e.target.closest('li');
+  const { id } = parent.dataset;
+
+  const existingItem = shopCart.find(item => item.id === id);
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    const newItem = storeCard.find(item => item.id === id);
+    shopCart.push(newItem);
+  };
+  console.log(shopCart)
+  Notiflix.Notify.success('Вау, твій товар уже в кошику!');
+};
