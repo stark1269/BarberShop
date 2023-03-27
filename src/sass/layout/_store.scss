@@ -73,11 +73,19 @@
   height: 50px;
   border: 1px solid $current-color;
   border-radius: 50%;
+  transition: all 250ms $transition;
 
   color: $current-color;
   background-color: $main-color;
+
+  &:hover, &:focus {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 15px rgba(46, 229, 157, 0.4);
+    background-color: $current-color;
+    color: $main-color;
+  }
 }
 
 .store-icon-cart {
-  fill: $current-color;
+  fill: currentColor;
 }
