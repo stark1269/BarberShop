@@ -139,7 +139,8 @@ function onCardButtonClick(e) {
   const { cart } = btn?.dataset || {};
 
   switch (cart) {
-  case 'cart':
+    case 'cart':
+      
   const parent = e.target.closest('li');
   const { id } = parent?.dataset || {};
 
@@ -150,9 +151,18 @@ function onCardButtonClick(e) {
   } else {
     const newItem = storeCard.find(item => item.id === id);
     shopCart.push(newItem);
+    showBtnCart();
   };
   console.log(shopCart)
       Notiflix.Notify.success('Вау, твій товар уже в кошику!');
   break
+  };
+};
+
+function showBtnCart() {
+  const heroCartBtn = document.querySelector('.hero-cart-btn');
+
+  if (shopCart.length) {
+    heroCartBtn.style.display = 'flex';
   };
 };
