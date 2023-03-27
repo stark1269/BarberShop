@@ -148,10 +148,14 @@ function onCardButtonClick(e) {
 
   if (existingItem) {
     existingItem.quantity += 1;
+    cartShopList.innerHTML = createMarkup(shopCart);
+    CalcTotalSum(shopCart);
   } else {
     const newItem = storeCard.find(item => item.id === id);
     shopCart.push(newItem);
     showBtnCart();
+    cartShopList.innerHTML = createMarkup(shopCart);
+    CalcTotalSum(shopCart);
   };
 
   Notiflix.Notify.success('Вау, твій товар уже в кошику!');
@@ -172,24 +176,30 @@ const modalShopCart = document.querySelector('.shop-cart');
 const modalShopCartBtn = document.querySelector('.cart-shop-btn');
 const cartShopList = document.querySelector('.cart-shop-list');
 
-function showModalShopCart() {
-  modalShopCart.classList.remove('cart-none');
-
-  cartShopList.innerHTML = createMarkup(shopCart);
-
-  sum = shopCart.map(item => item.price * item.quantity);
+function CalcTotalSum(array) {
+  sum = array.map(item => item.price * item.quantity);
   let totalSum = sum.reduce((acc, item) => {
     return acc += item
   }, 0);
 
   const totalPriceContent = document.querySelector('.cart-shop-total-price');
   totalPriceContent.textContent = `${totalSum} ₴`; 
+}
+
+function showModalShopCart() {
+  modalShopCart.classList.remove('cart-none');
+  document.body.classList.add('body-open');
+
+  cartShopList.innerHTML = createMarkup(shopCart);
+
+  CalcTotalSum(shopCart);
 };
 
 openCartBtn.addEventListener('click', showModalShopCart);
 
 function closeModalShopCart() {
   modalShopCart.classList.add('cart-none');
+  document.body.classList.remove('body-open');
 }
 
 modalShopCartBtn.addEventListener('click', closeModalShopCart);
@@ -206,5 +216,3 @@ function createMarkup(array) {
   <button class="cart-item-btn" type="button">Видалити</button>
   </li>`).join('');
 };
-
-// 
