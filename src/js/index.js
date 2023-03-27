@@ -31,7 +31,7 @@ blogCard.addEventListener('click', () => {
   blogTextSecond.classList.toggle('slide-second');
 });
 
-// Кнопка вверх
+// Кнопка вверх / Скролл
 
 const arrow = document.querySelector('.border-arrow');
 arrow.addEventListener('click', () => {
@@ -48,7 +48,7 @@ const { isIntersecting } = entries[0];
 const header = document.querySelector('.header');
 observer.observe(header);
 
-// Секция галерея
+// Секция галерея / Анимация фотограций галереи
 
 const galleryItems = document.querySelectorAll('.gallery-item-link');
 galleryItems.forEach(item => {
@@ -76,7 +76,7 @@ galleryItems.forEach(item => {
 
 new simpleLightbox('.gallery a');
 
-// Секция формы
+// Сбор информации в объект в секции формы
 
 const form = document.querySelector('.form-items');
 
@@ -161,9 +161,9 @@ function onCardButtonClick(e) {
 
 // Функиця показа кнопки корзины товара
 
-function showBtnCart() {
-  const heroCartBtn = document.querySelector('.hero-cart-btn');
+const heroCartBtn = document.querySelector('.hero-cart-btn');
 
+function showBtnCart() {
   if (shopCart.length) {
     heroCartBtn.style.display = 'flex';
   };
