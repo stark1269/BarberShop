@@ -18,10 +18,10 @@ align-items: center;
 
 .header-list {
   display: flex;
-  gap: 20px;
-
+  gap: 10px;
+  
   @include desktop {
-    gap: 30px;
+    gap: 20px;
   }
 }
 
