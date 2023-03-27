@@ -141,7 +141,7 @@ function onCardButtonClick(e) {
   switch (cart) {
   case 'cart':
   const parent = e.target.closest('li');
-  const { id } = parent.dataset;
+  const { id } = parent?.dataset || {};
 
   const existingItem = shopCart.find(item => item.id === id);
 
