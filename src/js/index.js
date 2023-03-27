@@ -2,6 +2,7 @@ import { storeCard } from "./storeCard";
 import simpleLightbox from "simplelightbox";
 import Notiflix from "notiflix";
 import "simplelightbox/dist/simple-lightbox.min.css";
+
 // открытие/закрытие мобильного меню
 
 const mobMenuBtn = document.querySelector('.nav-icon');
