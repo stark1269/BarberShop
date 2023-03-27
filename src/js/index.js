@@ -127,7 +127,7 @@ mobMenuLinks.forEach(menuLink => {
 }
 );
 
-// Клик по кнопке в секции товаров
+// Функция клика по кнопке в добавить в коризну
 
 let shopCart = [];
 
@@ -153,11 +153,13 @@ function onCardButtonClick(e) {
     shopCart.push(newItem);
     showBtnCart();
   };
-  console.log(shopCart)
-      Notiflix.Notify.success('Вау, твій товар уже в кошику!');
+
+  Notiflix.Notify.success('Вау, твій товар уже в кошику!');
   break
   };
 };
+
+// Функиця показа кнопки корзины товара
 
 function showBtnCart() {
   const heroCartBtn = document.querySelector('.hero-cart-btn');
