@@ -169,7 +169,7 @@ function onCardButtonClick(e) {
 // Функиця подсчета общей стоимости товаров
 
 function CalcTotalSum(array) {
-  sum = array.map(item => item.price * item.quantity);
+  const sum = array.map(item => item.price * item.quantity);
   let totalSum = sum.reduce((acc, item) => {
     return acc += item
   }, 0);
