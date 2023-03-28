@@ -187,8 +187,12 @@ function showModalShopCart() {
   modalShopCart.classList.remove('cart-none');
   document.body.classList.add('body-open');
 
-  cartShopList.innerHTML = createMarkup(shopCart);
-
+  if (!shopCart.length) {
+    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой! Тут ще нічого немає</p>';
+  } else if (shopCart.length) {
+    cartShopList.innerHTML = createMarkup(shopCart);
+  }
+  
   CalcTotalSum(shopCart);
 };
 
@@ -232,6 +236,9 @@ function onClickDeleteCard(e) {
   const { id } = parent?.dataset || {};
 
   shopCart = shopCart.filter((cart) => id !== cart.id);
+  if (!shopCart.length) {
+    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой! Тут ще нічого немає</p>';
+  };
   saveShopCart();
   CalcTotalSum(shopCart);
   parent.remove();
