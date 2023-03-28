@@ -131,6 +131,8 @@ mobMenuLinks.forEach(menuLink => {
 
 let shopCart = [];
 
+loadShopCart();
+
 const storeList = document.querySelector('.store-list');
 storeList.addEventListener('click', onCardButtonClick);
 
@@ -150,24 +152,17 @@ function onCardButtonClick(e) {
     existingItem.quantity += 1;
     cartShopList.innerHTML = createMarkup(shopCart);
     CalcTotalSum(shopCart);
+    saveShopCart();
   } else {
     const newItem = storeCard.find(item => item.id === id);
     shopCart.push(newItem);
-    showBtnCart();
     cartShopList.innerHTML = createMarkup(shopCart);
     CalcTotalSum(shopCart);
+    saveShopCart();
   };
 
   Notiflix.Notify.success('Вау, твій товар уже в кошику!');
     break
-  };
-};
-
-// Функиця показа кнопки корзины товара
-
-function showBtnCart() {
-  if (shopCart.length) {
-    openCartBtn.style.display = 'flex';
   };
 };
 
@@ -180,7 +175,7 @@ function CalcTotalSum(array) {
   }, 0);
 
   const totalPriceContent = document.querySelector('.cart-shop-total-price');
-  totalPriceContent.textContent = `${totalSum} ₴`; 
+  totalPriceContent.textContent = `${totalSum} ₴`;
 }
 
 const modalShopCart = document.querySelector('.shop-cart');
@@ -221,4 +216,40 @@ function createMarkup(array) {
   </div>
   <button class="cart-item-btn" type="button">Видалити</button>
   </li>`).join('');
+};
+
+// Функция удаление товара с корзины
+
+cartShopList.addEventListener('click', onClickDeleteCard);
+
+function onClickDeleteCard(e) {
+
+  if (e.target.nodeName !== 'BUTTON') {
+    return
+  }
+
+  const parent = e.target.closest('li');
+  const { id } = parent?.dataset || {};
+
+  shopCart = shopCart.filter((cart) => id !== cart.id);
+  saveShopCart();
+  parent.remove();
+};
+
+// Local Storage Shopping
+
+function saveShopCart() {
+  try {
+      localStorage.setItem('Shopping cart', JSON.stringify(shopCart));
+    } catch (error) {
+      console.error('error');
+    };
+};
+
+function loadShopCart() {
+  try {
+      shopCart = JSON.parse(localStorage.getItem('Shopping cart')) || [];
+    } catch (error) {
+      console.error('error');
+    };
 };
