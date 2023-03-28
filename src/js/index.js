@@ -188,7 +188,7 @@ function showModalShopCart() {
   document.body.classList.add('body-open');
 
   if (!shopCart.length) {
-    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой! Тут ще нічого немає</p>';
+    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой!<br> Тут ще нічого немає</p>';
   } else if (shopCart.length) {
     cartShopList.innerHTML = createMarkup(shopCart);
   }
@@ -237,7 +237,7 @@ function onClickDeleteCard(e) {
 
   shopCart = shopCart.filter((cart) => id !== cart.id);
   if (!shopCart.length) {
-    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой! Тут ще нічого немає</p>';
+    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой!<br> Тут ще нічого немає</p>';
   };
   saveShopCart();
   CalcTotalSum(shopCart);

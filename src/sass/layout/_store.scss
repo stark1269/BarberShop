@@ -223,8 +223,7 @@
 .empty-shop-cart {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-around;
   font-size: 16px;
   line-height: 1.36;
   text-transform: uppercase;
