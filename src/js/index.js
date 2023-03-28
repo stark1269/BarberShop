@@ -233,6 +233,7 @@ function onClickDeleteCard(e) {
 
   shopCart = shopCart.filter((cart) => id !== cart.id);
   saveShopCart();
+  CalcTotalSum(shopCart);
   parent.remove();
 };
 
