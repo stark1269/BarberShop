@@ -178,13 +178,13 @@ function CalcTotalSum(array) {
   totalPriceContent.textContent = `${totalSum} ₴`;
 }
 
-const modalShopCart = document.querySelector('.shop-cart');
+const modalShopCart = document.querySelector('.js-shop-cart');
 const cartShopList = document.querySelector('.cart-shop-list');
 
 // Функция показа корзины товаров
 
 function showModalShopCart() {
-  modalShopCart.classList.remove('cart-none');
+  modalShopCart.classList.remove('is-hidden');
   document.body.classList.add('body-open');
 
   if (!shopCart.length) {
@@ -201,10 +201,16 @@ openCartBtn.addEventListener('click', showModalShopCart);
 
 // Функция закрытия корзины товаров
 
+modalShopCart.addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    closeModalShopCart();
+  };
+});
+
 function closeModalShopCart() {
-  modalShopCart.classList.add('cart-none');
+  modalShopCart.classList.add('is-hidden');
   document.body.classList.remove('body-open');
-}
+};
 
 const modalShopCartBtn = document.querySelector('.cart-shop-btn');
 modalShopCartBtn.addEventListener('click', closeModalShopCart);
