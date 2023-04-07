@@ -144,10 +144,33 @@
   }
 
   &::after {
-    content: '\2639';
+    content: '\1F625';
     font-size: 26px;
 
     @include tablet {
+      font-size: 32px;
+    }
+  }
+}
+
+.shop-card-sent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 13px;
+  line-height: 1.36;
+  text-transform: uppercase;
+  color: $current-color;
+    
+  @include tablet {
+    font-size: 16px;
+  }
+
+  &::after {
+    content: '\1F60A';
+    font-size: 26px;
+
+  @include tablet {
       font-size: 32px;
     }
   }

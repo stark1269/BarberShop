@@ -187,11 +187,10 @@ function showModalShopCart() {
   modalShopCart.classList.remove('is-hidden');
   document.body.classList.add('body-open');
 
-  if (!shopCart.length) {
-    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой!<br> Тут ще нічого немає</p>';
-  } else if (shopCart.length) {
+  if (shopCart.length) {
     cartShopList.innerHTML = createMarkup(shopCart);
-  }
+    shopCardFormBtn.disabled = false;
+  } emptyShopCard();
   
   CalcTotalSum(shopCart);
 };
@@ -242,9 +241,7 @@ function onClickDeleteCard(e) {
   const { id } = parent?.dataset || {};
 
   shopCart = shopCart.filter((cart) => id !== cart.id);
-  if (!shopCart.length) {
-    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой!<br> Тут ще нічого немає</p>';
-  };
+  emptyShopCard();
   saveShopCart();
   CalcTotalSum(shopCart);
   parent.remove();
@@ -266,4 +263,38 @@ function loadShopCart() {
     } catch (error) {
       console.error('error');
     };
+};
+
+// Функция показал текста и дезейбл кнопки если корзина пустая 
+
+const shopCardFormBtn = document.querySelector('.cart-shop-form-btn');
+
+function emptyShopCard() {
+  if (!shopCart.length) {
+    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой!<br> Тут ще нічого немає</p>';
+    shopCardFormBtn.disabled = true;
+  };
+};
+
+// Функция отправки корзины товара
+
+const shopCardForm = document.querySelector('.cart-shop-form');
+shopCardForm.addEventListener('submit', onShopCardSubmit);
+
+function onShopCardSubmit(e) {
+  e.preventDefault();
+  const name = e.target.elements.name.value.trim();
+  const phone = e.target.elements.phone.value.trim();
+
+  const sentOrder = {
+    name,
+    phone,
+    shopCart: [...shopCart],
+  };
+  console.log(sentOrder);
+
+  cartShopList.innerHTML = "<p class='shop-card-sent'>Дякуємо за замовлення!<br> Володимир незабаром з тобою зв'яжеться</p>";
+  shopCart = [];
+  saveShopCart();
+  shopCardForm.reset();
 };
