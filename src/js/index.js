@@ -218,7 +218,7 @@ modalShopCardBtn.addEventListener('click', closeModalShopCard);
 
 function createMarkup(array) {
   return array.map(item => `<li class="card-shop-item" data-id="${item.id}">
-  <img class="card-shop-img" src="${item.img} alt="${item.name}" />
+  <img class="card-shop-img" src="${item.img}" alt="${item.name}" />
   <div class="item-text-wrap">
   <p class="card-item-text">${item.name}</p>
   <p class="store-item-price">${item.price} &#8372;</p>
