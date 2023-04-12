@@ -129,36 +129,36 @@ mobMenuLinks.forEach(menuLink => {
 
 // Функция клика по кнопке в добавить в коризну
 
-let shopCart = [];
+let shopCard = [];
 
-loadShopCart();
+loadShopCard();
 
 const storeList = document.querySelector('.store-list');
 storeList.addEventListener('click', onCardButtonClick);
 
 function onCardButtonClick(e) {
   const btn = e.target.closest('button');
-  const { cart } = btn?.dataset || {};
+  const { card } = btn?.dataset || {};
 
-  switch (cart) {
-    case 'cart':
+  switch (card) {
+    case 'card':
       
   const parent = e.target.closest('li');
   const { id } = parent?.dataset || {};
 
-  const existingItem = shopCart.find(item => item.id === id);
+  const existingItem = shopCard.find(item => item.id === id);
 
   if (existingItem) {
     existingItem.quantity += 1;
-    cartShopList.innerHTML = createMarkup(shopCart);
-    CalcTotalSum(shopCart);
-    saveShopCart();
+    cardShopList.innerHTML = createMarkup(shopCard);
+    CalcTotalSum(shopCard);
+    saveShopCard();
   } else {
     const newItem = storeCard.find(item => item.id === id);
-    shopCart.push(newItem);
-    cartShopList.innerHTML = createMarkup(shopCart);
-    CalcTotalSum(shopCart);
-    saveShopCart();
+    shopCard.push(newItem);
+    cardShopList.innerHTML = createMarkup(shopCard);
+    CalcTotalSum(shopCard);
+    saveShopCard();
   };
 
   Notiflix.Notify.success('Вау, твій товар уже в кошику!');
@@ -174,62 +174,63 @@ function CalcTotalSum(array) {
     return acc += item
   }, 0);
 
-  const totalPriceContent = document.querySelector('.cart-shop-total-price');
+  const totalPriceContent = document.querySelector('.card-shop-total-price');
   totalPriceContent.textContent = `${totalSum} ₴`;
 }
 
-const modalShopCart = document.querySelector('.js-shop-cart');
-const cartShopList = document.querySelector('.cart-shop-list');
+const modalShopCard = document.querySelector('.js-shop-card');
+const cardShopList = document.querySelector('.card-shop-list');
 
 // Функция показа корзины товаров
 
-function showModalShopCart() {
-  modalShopCart.classList.remove('is-hidden');
+function showModalShopCard() {
+  modalShopCard.classList.remove('is-hidden');
   document.body.classList.add('body-open');
 
-  if (shopCart.length) {
-    cartShopList.innerHTML = createMarkup(shopCart);
+  if (shopCard.length) {
+    cardShopList.innerHTML = createMarkup(shopCard);
     shopCardFormBtn.disabled = false;
   } emptyShopCard();
   
-  CalcTotalSum(shopCart);
+  CalcTotalSum(shopcard);
 };
 
-const openCartBtn = document.querySelector('.open-cart-shop-btn');
-openCartBtn.addEventListener('click', showModalShopCart);
+const openCardBtn = document.querySelector('.open-card-shop-btn');
+openCardBtn.addEventListener('click', showModalShopCard);
 
 // Функция закрытия корзины товаров
 
-modalShopCart.addEventListener('click', (e) => {
+modalShopCard.addEventListener('click', (e) => {
   if (e.target === e.currentTarget) {
-    closeModalShopCart();
+    closeModalShopCard();
   };
 });
 
-function closeModalShopCart() {
-  modalShopCart.classList.add('is-hidden');
+function closeModalShopCard() {
+  modalShopCard.classList.add('is-hidden');
   document.body.classList.remove('body-open');
 };
 
-const modalShopCartBtn = document.querySelector('.cart-shop-btn');
-modalShopCartBtn.addEventListener('click', closeModalShopCart);
+const modalShopCardBtn = document.querySelector('.card-shop-btn');
+modalShopCardBtn.addEventListener('click', closeModalShopCard);
 
 // Функия создания разметки списка корзины товаров
 
 function createMarkup(array) {
-  return array.map(item => `<li class="cart-shop-item" data-id="${item.id}">
+  return array.map(item => `<li class="card-shop-item" data-id="${item.id}">
+  <img class="card-shop-img" src="${item.img} alt="${item.name}" />
   <div class="item-text-wrap">
-  <p class="cart-item-text">${item.name}</p>
+  <p class="card-item-text">${item.name}</p>
   <p class="store-item-price">${item.price} &#8372;</p>
-  <p class="cart-item-text">Кількість: ${item.quantity}</p>
+  <p class="card-item-text">Кількість: ${item.quantity}</p>
   </div>
-  <button class="cart-item-btn" type="button">Видалити</button>
+  <button class="card-item-btn" type="button">Видалити</button>
   </li>`).join('');
 };
 
 // Функция удаление товара с корзины
 
-cartShopList.addEventListener('click', onClickDeleteCard);
+cardShopList.addEventListener('click', onClickDeleteCard);
 
 function onClickDeleteCard(e) {
 
@@ -240,26 +241,26 @@ function onClickDeleteCard(e) {
   const parent = e.target.closest('li');
   const { id } = parent?.dataset || {};
 
-  shopCart = shopCart.filter((cart) => id !== cart.id);
+  shopCard = shopCard.filter((card) => id !== card.id);
   emptyShopCard();
-  saveShopCart();
-  CalcTotalSum(shopCart);
+  saveShopCard();
+  CalcTotalSum(shopCard);
   parent.remove();
 };
 
 // Local Storage Shopping
 
-function saveShopCart() {
+function saveShopCard() {
   try {
-      localStorage.setItem('Shopping cart', JSON.stringify(shopCart));
+      localStorage.setItem('Shopping card', JSON.stringify(shopCard));
     } catch (error) {
       console.error('error');
     };
 };
 
-function loadShopCart() {
+function loadShopCard() {
   try {
-      shopCart = JSON.parse(localStorage.getItem('Shopping cart')) || [];
+      shopCard = JSON.parse(localStorage.getItem('Shopping card')) || [];
     } catch (error) {
       console.error('error');
     };
@@ -267,18 +268,18 @@ function loadShopCart() {
 
 // Функция показал текста и дезейбл кнопки если корзина пустая 
 
-const shopCardFormBtn = document.querySelector('.cart-shop-form-btn');
+const shopCardFormBtn = document.querySelector('.card-shop-form-btn');
 
 function emptyShopCard() {
-  if (!shopCart.length) {
-    cartShopList.innerHTML = '<p class="empty-shop-cart">А, ой!<br> Тут ще нічого немає</p>';
+  if (!shopCard.length) {
+    cardShopList.innerHTML = '<p class="empty-shop-card">А, ой!<br> Тут ще нічого немає</p>';
     shopCardFormBtn.disabled = true;
   };
 };
 
 // Функция отправки корзины товара
 
-const shopCardForm = document.querySelector('.cart-shop-form');
+const shopCardForm = document.querySelector('.card-shop-form');
 shopCardForm.addEventListener('submit', onShopCardSubmit);
 
 function onShopCardSubmit(e) {
@@ -289,12 +290,12 @@ function onShopCardSubmit(e) {
   const sentOrder = {
     name,
     phone,
-    shopCart: [...shopCart],
+    shopCard: [...shopCard],
   };
   console.log(sentOrder);
 
-  cartShopList.innerHTML = "<p class='shop-card-sent'>Дякуємо за замовлення!<br> Володимир незабаром з тобою зв'яжеться</p>";
-  shopCart = [];
-  saveShopCart();
+  cardShopList.innerHTML = "<p class='shop-card-sent'>Дякуємо за замовлення!<br> Володимир незабаром з тобою зв'яжеться</p>";
+  shopCard = [];
+  saveShopCard();
   shopCardForm.reset();
 };

@@ -1,4 +1,4 @@
-.shop-cart {
+.shop-card {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,11 +23,11 @@
   }
 }
 
-.cart-none {
+.card-none {
   display: none;
 }
 
-.cart-shop-btn {
+.card-shop-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,11 +38,11 @@
   background-color: transparent;
 }
 
-.cart-shop-icon {
+.card-shop-icon {
   fill: $current-color;
 }
 
-.cart-shop-list {
+.card-shop-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -54,16 +54,28 @@
   }
 }
 
-.cart-shop-item {
+.card-shop-item {
   border: 1px solid $current-color;
   border-radius: 20px;
   padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
 }
 
-.cart-item-text {
+.card-shop-img {
+  width: 50px;
+
+  @include tablet {
+    width: 75px;
+  }
+
+  @include desktop {
+    width: 100px;
+  }
+}
+
+.card-item-text {
   font-size: 10px;
   line-height: 1.68;
   letter-spacing: 0.02em;
@@ -74,7 +86,8 @@
   }
 }
 
-.cart-item-btn {
+.card-item-btn {
+  margin-left: auto;
   border: 1px solid $current-color;
   background-color: transparent;
   border-radius: 20px;
@@ -88,13 +101,13 @@
   }
 }
 
-.cart-shop-wrap {
+.card-shop-wrap {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.cart-shop-sum-title {
+.card-shop-sum-title {
   font-size: 12px;
   line-height: 1.36;
   text-transform: uppercase;
@@ -105,13 +118,13 @@
   }
 }
 
-.cart-shop-form {
+.card-shop-form {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
 
-.cart-shop-input {
+.card-shop-input {
   border: none;
   border-bottom: 1px solid $current-color;
   width: calc((100% - 15px) / 2);
@@ -130,7 +143,7 @@
   }
 }
 
-.empty-shop-cart {
+.empty-shop-card {
   display: flex;
   align-items: center;
   justify-content: space-around;
