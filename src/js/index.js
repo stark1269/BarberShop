@@ -132,6 +132,7 @@ mobMenuLinks.forEach(menuLink => {
 let shopCard = [];
 
 loadShopCard();
+CalcTotalSum(shopCard);
 
 const storeList = document.querySelector('.store-list');
 storeList.addEventListener('click', onCardButtonClick);
@@ -297,5 +298,6 @@ function onShopCardSubmit(e) {
   cardShopList.innerHTML = "<p class='shop-card-sent'>Дякуємо за замовлення!<br> Володимир незабаром з тобою зв'яжеться</p>";
   shopCard = [];
   saveShopCard();
+  CalcTotalSum(shopCard);
   shopCardForm.reset();
 };
