@@ -193,7 +193,7 @@ function showModalShopCard() {
     shopCardFormBtn.disabled = false;
   } emptyShopCard();
   
-  CalcTotalSum(shopcard);
+  CalcTotalSum(shopCard);
 };
 
 const openCardBtn = document.querySelector('.open-card-shop-btn');
