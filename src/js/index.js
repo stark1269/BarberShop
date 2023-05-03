@@ -243,6 +243,7 @@ function onClickDeleteCard(e) {
   const { id } = parent?.dataset || {};
 
   shopCard = shopCard.filter((card) => id !== card.id);
+  shopCard.quantity = 1;
   emptyShopCard();
   saveShopCard();
   CalcTotalSum(shopCard);
