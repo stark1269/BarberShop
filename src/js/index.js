@@ -242,6 +242,9 @@ function onClickDeleteCard(e) {
   const parent = e.target.closest('li');
   const { id } = parent?.dataset || {};
 
+  const deletedItem = shopCard.find(item => item.id === id);
+  deletedItem.quantity = 1;
+  
   shopCard = shopCard.filter((card) => id !== card.id);
   emptyShopCard();
   saveShopCard();
